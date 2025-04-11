@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TablaurBase - Modern Spreadsheet App</title>
+    <link rel="stylesheet" href="/style.css">
+  </head>
+  <body>
+    <div class="container">
+      <div class="app-container">
+        <div class="header">
+          <div class="logo">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M3 9v10a2 2 0 0 0 2 2h4m-6-12h18M9 21h10a2 2 0 0 0 2-2V9"/>
+            </svg>
+          </div>
+          <h1>TablaurBase</h1>
+        </div>
+        
+        <div class="toolbar">
+          <div class="column-management">
+            <input type="text" id="columnNameInput" placeholder="Enter column name" />
+            <button id="addColumnBtn">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 5v14m-7-7h14"/>
+              </svg>
+              Add Column
+            </button>
+          </div>
+
+          <div class="actions">
+            <button id="addRowBtn" class="hidden">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 5v14m-7-7h14"/>
+              </svg>
+              Add Row
+            </button>
+            <button id="exportBtn" class="hidden">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                <polyline points="7 10 12 15 17 10"/>
+                <line x1="12" y1="15" x2="12" y2="3"/>
+              </svg>
+              Export CSV
+            </button>
+          </div>
+        </div>
+
+        <div class="spreadsheet-container">
+          <table id="spreadsheet">
+            <thead>
+              <tr>
+                <th class="row-header">#</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+          <div id="emptyState" class="empty-state">
+            Add columns to start creating your spreadsheet
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="exportDialog" class="dialog-overlay hidden">
+      <div class="dialog">
+        <h2>Export Spreadsheet</h2>
+        <input type="text" id="exportFileName" placeholder="Enter file name" />
+        <div class="dialog-actions">
+          <button id="cancelExportBtn">Cancel</button>
+          <button id="confirmExportBtn">Export</button>
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>
